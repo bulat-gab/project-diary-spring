@@ -11,12 +11,16 @@
   <head>
     <title>Diary</title>
       <%--<link href="style/style.css" rel="stylesheet">--%>
-    <link href="<c:url value='index.css' />" type="text/css" rel="stylesheet">
+    <link href="<c:url value='style.css' />" type="text/css" rel="stylesheet">
+    <link href="<c:url value='./style.css' />" type="text/css" rel="stylesheet">
+    <link href="/style.css" type="text/css" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
   <header>
     <div class="header">
-      <h1 style="text-align: center; color: #ff2207">Welcome to the Diary service!
+      <h1 class="kek">Welcome to the Diary service!
       </h1>
     </div>
   </header>

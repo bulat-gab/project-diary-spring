@@ -15,7 +15,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ProjectDiary</servlet-name>
-        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <context-param>

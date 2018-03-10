@@ -12,9 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -25,17 +22,14 @@ import java.util.logging.Logger;
 @Controller
 @SessionAttributes("username")
 @RequestMapping("/showdiaries")
-public class ShowDiariesServlet extends HttpServlet{
-    private static Logger LOGGER = Logger.getLogger(ShowDiariesServlet.class.getName());
+public class ShowDiariesController extends HttpServlet{
+    private static Logger LOGGER = Logger.getLogger(ShowDiariesController.class.getName());
     private static DiaryService diaryService = new DiaryServiceImpl() ;
 
     @RequestMapping(method = RequestMethod.GET)
-    protected ModelAndView doGet(ModelMap model /*HttpServletRequest req, HttpServletResponse resp*/) throws ServletException, IOException {
+    protected ModelAndView doGet(ModelMap model) {
         LOGGER.info("Show diary");
-        /*resp.setContentType("text/html");*/
 
-        /*HttpSession session = req.getSession();
-        String username = (String) session.getAttribute("username");*/
         String username = "";
         if(model.containsAttribute("username")) {
             username = (String) model.get("username");
@@ -44,7 +38,6 @@ public class ShowDiariesServlet extends HttpServlet{
             LOGGER.info("Diaries fetched for " + username);
             model.addAttribute("diaries", diaries);
             return new ModelAndView("/dashboard", model);
-            //getServletContext().getRequestDispatcher("/dashboard.jsp").forward(req, resp);
         }
         LOGGER.warning("User not found");
         return new ModelAndView("redirect:/index");

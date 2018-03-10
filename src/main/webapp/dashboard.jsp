@@ -1,7 +1,3 @@
-<%@ page import="model.pojo.Diary" %>
-<%@ page import="java.util.List" %>
-<%@ page import="services.interfaces.DiaryService" %>
-<%@ page import="services.impl.DiaryServiceImpl" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -12,18 +8,18 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
+<%--<%
     String username = (String) session.getAttribute("username");
     DiaryService diaryService = new DiaryServiceImpl() ;
     List<Diary> diaries = diaryService.getAllDiariesByUserName(username);
-%>
+%>--%>
 <html>
 <head>
     <title>Dashboard</title>
 </head>
 <body>
 <header>
-    <h1>Welcome, <%= username%></h1>
+    <h1>Welcome, ${sessionScope.username}</h1>
     <form method="get" action="logout">
         <input type="submit" name="Logout" value="Logout">
     </form>
