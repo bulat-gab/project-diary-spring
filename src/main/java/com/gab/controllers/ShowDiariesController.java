@@ -5,6 +5,7 @@ import com.gab.services.impl.DiaryServiceImpl;
 import com.gab.services.interfaces.DiaryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -12,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -21,25 +25,46 @@ import java.util.logging.Logger;
  */
 @Controller
 @SessionAttributes("username")
-@RequestMapping("/showdiaries")
-public class ShowDiariesController extends HttpServlet{
+public class ShowDiariesController {
     private static Logger LOGGER = Logger.getLogger(ShowDiariesController.class.getName());
     private static DiaryService diaryService = new DiaryServiceImpl() ;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/showdiaries", method = RequestMethod.GET)
     protected ModelAndView doGet(ModelMap model) {
         LOGGER.info("Show diary");
 
-        String username = "";
-        if(model.containsAttribute("username")) {
-            username = (String) model.get("username");
+        try{
+            String username = "";
+            if(model.containsAttribute("username")) {
+                username = (String) model.get("username");
 
-            List<Diary> diaries = diaryService.getAllDiariesByUserName(username);
-            LOGGER.info("Diaries fetched for " + username);
-            model.addAttribute("diaries", diaries);
-            return new ModelAndView("/dashboard", model);
+                List<Diary> diaries = diaryService.getAllDiariesByUserName(username);
+                LOGGER.info("Diaries fetched for " + username);
+                model.addAttribute("diaries", diaries);
+                return new ModelAndView("/dashboard", model);
+            }
         }
-        LOGGER.warning("User not found");
+        catch (Exception e){
+            LOGGER.warning(e.getMessage());
+        }
+        return new ModelAndView("redirect:/index");
+    }
+
+
+    @RequestMapping(value = "/add-diary", method = RequestMethod.POST)
+    protected ModelAndView doPost(@ModelAttribute Diary diary, ModelMap model) {
+        LOGGER.info("Add diary");
+        try {
+            String username;
+            if(model.containsAttribute("username")){
+                username = (String) model.get("username");
+                boolean isSaved = diaryService.saveDiaryByUserName(username, diary);
+                LOGGER.info("New diary for user " + username + " " + isSaved);
+            }
+            return doGet(model);
+        } catch (Exception e) {
+            LOGGER.warning(e.getMessage());
+        }
         return new ModelAndView("redirect:/index");
     }
 }
