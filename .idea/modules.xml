@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-diary-spring.iml" filepath="$PROJECT_DIR$/.idea/modules/project-diary-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-diary-spring.iml" filepath="$PROJECT_DIR$/project-diary-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-diary-spring_main.iml" filepath="$PROJECT_DIR$/.idea/modules/project-diary-spring_main.iml" group="project-diary-spring" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-diary-spring_test.iml" filepath="$PROJECT_DIR$/.idea/modules/project-diary-spring_test.iml" group="project-diary-spring" />
     </modules>
