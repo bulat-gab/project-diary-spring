@@ -14,4 +14,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <context:annotation-config/>
+    <!-- Service Implementations -->
+    <bean id="diaryService" class="com.gab.services.impl.DiaryServiceImpl" />
+    <bean id="userService" class="com.gab.services.impl.UserServiceImpl" />
+
+    <!-- DAO Implementation -->
+    <bean id="diaryDAO" class="com.gab.model.dao.impl.DiaryDAOImpl"/>
+    <bean id="userDAO" class="com.gab.model.dao.impl.UserDAOImpl"/>
+
 </beans>

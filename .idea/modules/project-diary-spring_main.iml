@@ -18,6 +18,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="web" name="Web Gradle : project-diary-spring-1.0-SNAPSHOT.war">

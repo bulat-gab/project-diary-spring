@@ -3,6 +3,7 @@ package com.gab.controllers;
 import com.gab.model.pojo.User;
 import com.gab.services.impl.UserServiceImpl;
 import com.gab.services.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,7 +23,12 @@ import java.util.logging.Logger;
 @SessionAttributes("username")
 public class SessionController {
     private static Logger LOGGER = Logger.getLogger(SessionController.class.getName());
-    private static UserService userService = new UserServiceImpl() ;
+    private final UserService userService;
+
+    @Autowired
+    public SessionController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     protected ModelAndView login(@ModelAttribute User user, ModelMap model) {

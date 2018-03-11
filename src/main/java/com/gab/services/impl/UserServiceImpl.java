@@ -4,11 +4,11 @@ import com.gab.model.dao.impl.UserDAOImpl;
 import com.gab.model.dao.interfaces.UserDAO;
 import com.gab.model.pojo.User;
 import com.gab.services.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserServiceImpl implements UserService {
-    //private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class.getName());
-
-    private static UserDAO userDAO = new UserDAOImpl();
+    @Autowired
+    private UserDAO userDAO;
 
     @Override
     public boolean auth(String login, String password) {

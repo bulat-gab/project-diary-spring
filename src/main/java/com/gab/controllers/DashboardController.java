@@ -3,6 +3,7 @@ package com.gab.controllers;
 import com.gab.model.pojo.Diary;
 import com.gab.services.impl.DiaryServiceImpl;
 import com.gab.services.interfaces.DiaryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,12 @@ import java.util.logging.Logger;
 @SessionAttributes("username")
 public class DashboardController {
     private static Logger LOGGER = Logger.getLogger(DashboardController.class.getName());
-    private static DiaryService diaryService = new DiaryServiceImpl() ;
+    private final DiaryService diaryService;
+
+    @Autowired
+    public DashboardController(DiaryService diaryService) {
+        this.diaryService = diaryService;
+    }
 
     @RequestMapping(value = "/showdiaries", method = RequestMethod.GET)
     protected ModelAndView showDiaries(ModelMap model) {

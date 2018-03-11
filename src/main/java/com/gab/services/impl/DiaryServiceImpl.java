@@ -5,6 +5,7 @@ import com.gab.model.dao.interfaces.DiaryDAO;
 import com.gab.model.pojo.Diary;
 import com.gab.model.pojo.User;
 import com.gab.services.interfaces.DiaryService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -12,7 +13,9 @@ import java.util.List;
  * Created by gab on 06.Mar.2018
  */
 public class DiaryServiceImpl implements DiaryService {
-    private DiaryDAO diaryDAO = new DiaryDAOImpl();
+
+    @Autowired
+    private DiaryDAO diaryDAO;
 
     @Override
     public List<Diary> getAllDiariesByUserName(String username) {
