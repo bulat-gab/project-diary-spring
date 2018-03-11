@@ -11,12 +11,12 @@ public class UserServiceImpl implements UserService {
     private static UserDAO userDAO = new UserDAOImpl();
 
     @Override
-    public User auth(String login, String password) {
-        return userDAO.findUserByUserNameAndPassword(login, password);
+    public boolean auth(String login, String password) {
+        return userDAO.findUserByUserNameAndPassword(login, password) != null;
     }
 
     @Override
-    public User register(String username, String password){
-        return userDAO.createUser(username, password);
+    public boolean register(String username, String password){
+        return userDAO.createUser(username, password) != null;
     }
 }
