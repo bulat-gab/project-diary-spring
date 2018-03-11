@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 	<title>Simple Error Page a Flat Responsive Widget Template :: w3layouts</title>
-	<link rel="stylesheet" href="/error/css/style.css">
+	<link rel="stylesheet" href="resources/css/error.css">
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200italic,200,300,300italic,400italic,600,600italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<!-- For-Mobile-Apps-and-Meta-Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h2>OOPS</h2>
 		<h1> ERROR 404</h1>
 		<h3>"Sorry ! the page you are looking for can't be found"</h3>
-		<a href="#" class="back">BACK TO HOME</a>
+		<a href="/index.jsp" class="back">BACK TO HOME</a>
 		<div class="social-icons w3">
 			<ul>
 				<li><a class="twitter" href="#"></a></li>

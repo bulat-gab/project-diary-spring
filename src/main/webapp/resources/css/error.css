@@ -60,7 +60,7 @@ img {
 }
 /*-- //Reset Code --*/
 body{
-	background:url('../images/16.jpg') no-repeat 0px 0px;
+	background:url('/resources/images/16.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:699px;
 }
@@ -111,29 +111,29 @@ a.back:hover{
 .main ul li a {
     width: 40px;
     height: 40px;
-    background: url('../images/img-sprite.png') no-repeat -160px -43px;
+    background: url('/resources/images/img-sprite.png') no-repeat -160px -43px;
     display: inline-block;
     border: none;
     background-size: 400px;
 }
 .main ul li a.facebook {
-    background: url('../images/img-sprite.png') no-repeat -200px -43px;
+    background: url('/resources/images/img-sprite.png') no-repeat -200px -43px;
     background-size: 400px;
 }
 .main ul li a.pinterest {
-    background: url('../images/img-sprite.png') no-repeat -240px -43px;
+    background: url('/resources/images/img-sprite.png') no-repeat -240px -43px;
     background-size: 400px;
 }
 .main ul li a.twitter:hover {
-    background: url('../images/img-sprite.png') no-repeat -160px 0px;
+    background: url('/resources/images/img-sprite.png') no-repeat -160px 0px;
     background-size: 400px;
 }
 .main ul li a.facebook:hover {
-    background: url('../images/img-sprite.png') no-repeat -200px 0px;
+    background: url('/resources/images/img-sprite.png') no-repeat -200px 0px;
     background-size: 400px;
 }
 .main ul li a.pinterest:hover {
-    background: url('../images/img-sprite.png') no-repeat -240px 0px;
+    background: url('/resources/images/img-sprite.png') no-repeat -240px 0px;
     background-size: 400px;
 }
 .footer{

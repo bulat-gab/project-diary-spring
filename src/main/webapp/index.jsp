@@ -10,10 +10,8 @@
 <html>
   <head>
     <title>Diary</title>
-      <%--<link href="style/style.css" rel="stylesheet">--%>
-    <link href="<c:url value='/style.css' />" type="text/css" rel="stylesheet"><%--
-    <link href="<c:url value='/home/gab/Documents/Innopolis/ip_java/project-diary-spring/src/main/resources/style.css' />" type="text/css" rel="stylesheet">--%>
-  </head>
+    <link href="<c:url value='/resources/css/index.css' />" type="text/css" rel="stylesheet">
+     </head>
   <body>
   <header>
     <div class="header">

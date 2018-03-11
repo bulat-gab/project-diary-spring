@@ -8,14 +8,12 @@
 
     <servlet>
         <servlet-name>ProjectDiary</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>ProjectDiary</servlet-name>
-        <url-pattern>/*(.html|.jsp)</url-pattern> <!-- If you put just '/' css files won't work -->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <context-param>
@@ -47,12 +45,12 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error/error.jsp</location>
+        <location>/error.jsp</location>
     </error-page>
 
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/error/error.html</location>
+        <location>/error.jsp</location>
     </error-page>
 
 
