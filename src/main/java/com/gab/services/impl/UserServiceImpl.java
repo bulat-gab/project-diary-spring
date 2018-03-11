@@ -16,12 +16,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean register(String username, String password){
-        return userDAO.createUser(username, password) != null;
-    }
-
-    @Override
-    public User auth(User user) {
-        return auth(user.getUsername(), user.getPassword());
+    public User register(String username, String password){
+        return userDAO.createUser(username, password);
     }
 }

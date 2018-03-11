@@ -25,12 +25,13 @@ public class SessionController {
     private static UserService userService = new UserServiceImpl() ;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    protected ModelAndView login(@ModelAttribute User inputUser, ModelMap model) {
+    protected ModelAndView login(@ModelAttribute User user, ModelMap model) {
         LOGGER.info("Logging in");
 
         try {
-            User user = userService.auth(inputUser);
-            if(inputUser != null && inputUser.equals(user)){
+            boolean isLogined = userService.auth(user.getUsername(), user.getPassword());
+
+            if(isLogined){
                 LOGGER.info(user.getUsername()+ " has successfully logged in.");
                 model.addAttribute("username", user.getUsername());
                 return new ModelAndView("redirect:/showdiaries", model);
@@ -51,7 +52,7 @@ public class SessionController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    protected ModelAndView doPost(@ModelAttribute User user, ModelMap model) {
+    protected ModelAndView register(@ModelAttribute User user, ModelMap model) {
         LOGGER.info("Registration");
 
         try {
