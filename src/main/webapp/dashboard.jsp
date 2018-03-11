@@ -18,11 +18,12 @@
     <title>Dashboard</title>
 </head>
 <body>
-<header>
-    <h1>Welcome, ${sessionScope.username}</h1>
-    <form method="get" action="logout">
-        <input type="submit" name="Logout" value="Logout">
-    </form>
+    <header>
+        <h1>Welcome, ${sessionScope.username}</h1>
+        <form method="get" action="logout">
+            <input type="submit" name="Logout" value="Logout">
+        </form>
+    </header>
     <div class="dashboard">
         <h3>Here is your diary list: </h3>
         <ul>
@@ -36,20 +37,18 @@
     </div>
 
     <form method="post" action="add-diary" id="add-diary">
-        <input type="text" placeholder="Diary name" name="diary-name" required>
+        <input type="text" placeholder="Diary name" name="name" required>
         <input type="submit" name="add-diary" value="Add diary">
     </form>
-    <textarea rows="4" cols="50" name="diary-note"
+    <textarea rows="4" cols="50" name="note"
               form="add-diary" placeholder="Enter your diary here" required></textarea>
 
     <br>
     <form method="post" action="delete-diary">
         <label></label>
-        <input type="text" name="diary-to-delete" required>
+        <input type="text" name="diaryToDelete" required>
         <input type="submit" value="Delete diary" name="delete">
     </form>
-
-</header>
 
 </body>
 </html>
