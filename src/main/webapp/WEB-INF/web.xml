@@ -26,4 +26,39 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+
+    <filter>
+        <filter-name>WhiteFilter</filter-name>
+        <filter-class>com.gab.controllers.filters.WhiteList</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>WhiteFilter</filter-name>
+        <url-pattern>/dashboard.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>WhiteFilter</filter-name>
+        <url-pattern>/showdiaries</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>WhiteFilter</filter-name>
+        <url-pattern>/register-success</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/error.html</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error/error.html</location>
+    </error-page>
+
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>
