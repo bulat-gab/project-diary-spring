@@ -15,7 +15,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ProjectDiary</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/*(.html|.jsp)</url-pattern> <!-- If you put just '/' css files won't work -->
     </servlet-mapping>
 
     <context-param>
@@ -47,7 +47,7 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error/error.html</location>
+        <location>/error/error.jsp</location>
     </error-page>
 
     <error-page>

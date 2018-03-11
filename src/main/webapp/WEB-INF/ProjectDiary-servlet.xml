@@ -21,6 +21,6 @@
 
     <!-- DAO Implementation -->
     <bean id="diaryDAO" class="com.gab.model.dao.impl.DiaryDAOImpl"/>
-    <bean id="userDAO" class="com.gab.model.dao.impl.UserDAOImpl"/>
+    <bean id="userDAO" class="com.gab.model.dao.impl.UserDAOImpl    "/>
 
 </beans>
