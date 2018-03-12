@@ -100,10 +100,23 @@ header {
 }
 
 .button-add-diary {
-    display: block;
 }
-
+/*
 input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}*/
+
+
+/* Form input text and password*/
+#regUsername,
+#regPassword,
+#loginUsername,
+#loginPassword{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -113,9 +126,13 @@ input[type=text], input[type=password] {
 }
 
 .add_diary textarea {
-    float: left;
     display: block;
 }
+
+/*.content-wrapper > div {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}*/
 
 /*
     Responsive layout
