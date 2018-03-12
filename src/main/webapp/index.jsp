@@ -27,7 +27,7 @@
                   <input type="text" placeholder="Enter username" name="username" id="loginUsername"required>
               </p>
               <p>
-                  <label for="loginPassword"><strong>Password</strong></label>
+                     <label for="loginPassword"><strong>Password</strong></label>
                   <input type="password" placeholder="Enter Password" name="password" id="loginPassword"required>
               </p>
               <p>
