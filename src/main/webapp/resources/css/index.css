@@ -3,7 +3,8 @@ html, body {
     height: 100%;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     color: #444;
-    -webkit-font-smoothing: antialiased;    background: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+    background: #f0f0f0;
 }
 
 header {
@@ -43,8 +44,11 @@ header {
 }
 
 .top_menu li.last {
-    /*float: right;*/
     background-color: #ff0010;
+}
+
+.top_menu_my_dashboard {
+    background-color: #4146ff;
 }
 
 .active {
@@ -101,16 +105,6 @@ header {
 
 .button-add-diary {
 }
-/*
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}*/
-
 
 /* Form input text and password*/
 #regUsername,
@@ -128,11 +122,6 @@ input[type=text], input[type=password] {
 .add_diary textarea {
     display: block;
 }
-
-/*.content-wrapper > div {
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-}*/
 
 /*
     Responsive layout

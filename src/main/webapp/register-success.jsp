@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Successful registration</title>
 </head>
 <body>
-    <header><h1>Welcome to Diary Service, ${sessionScope.username}</h1></header>
-    <form method="get" action="showdiaries">
-        <input type="submit" value="Go to diaries">
-    </form>
+    <%@include file="header.jsp"%>
+    <header><h1>You have successfully registered, ${sessionScope.username}!</h1></header>
 </body>
 </html>

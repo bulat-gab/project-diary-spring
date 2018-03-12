@@ -8,14 +8,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%--<%
-    String username = (String) session.getAttribute("username");
-    DiaryService diaryService = new DiaryServiceImpl() ;
-    List<Diary> diaries = diaryService.getAllDiariesByUserName(username);
-%>--%>
 <html>
 <head>
     <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <%@include file="header.jsp"%>

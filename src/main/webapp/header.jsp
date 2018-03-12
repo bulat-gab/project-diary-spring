@@ -14,6 +14,9 @@
         <ul class="top_menu">
             <li><a class="active" href="/index.jsp">HOME</a></li>
             <li><a href="https://github.com/meg0man/project-diary-spring">ABOUT US</a></li>
+            <c:if test="${sessionScope.username != null}">
+                <li class="top_menu_my_dashboard"><a href="/showdiaries">MY DASHBOARD</a></li>
+            </c:if>
             <li><a href="#">PARTNERS</a></li>
             <li><a href="#">CONTACTS</a></li>
             <c:if test="${sessionScope.username != null}">
