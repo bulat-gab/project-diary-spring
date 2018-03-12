@@ -27,10 +27,6 @@ header {
 }
 
 .top_menu li {
-    /*display: inline-block;
-    padding: 10px 30px;
-    margin: 0;*/
-
     display: inline-block;
 }
 
@@ -44,6 +40,11 @@ header {
 
 .top_menu li a:hover {
     background-color: #111;
+}
+
+.top_menu li.last {
+    /*float: right;*/
+    background-color: #ff0010;
 }
 
 .active {
@@ -83,11 +84,23 @@ header {
     margin: 8px 0;
     border: none;
     cursor: pointer;
+}
+
+.button-registration,
+.button-login {
     width: 100%;
 }
 
 .button:hover{
     opacity: 0.7;
+}
+
+.button-delete-diary {
+    background-color: #ff0010;
+}
+
+.button-add-diary {
+    display: block;
 }
 
 input[type=text], input[type=password] {
@@ -99,6 +112,20 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+.add_diary textarea {
+    float: left;
+    display: block;
+}
+
+/*
+    Responsive layout
+*/
+
+@media only screen and (max-width: 900px) {
+    .top_menu li.last {
+        float: right;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     .login,
@@ -106,5 +133,24 @@ input[type=text], input[type=password] {
         display: block;
         width: 100%;
         margin-bottom: 50px;
+    }
+    .top_menu li.last {
+        float: right;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .login,
+    .registration {
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .top_menu li {
+        display: block;
+    }
+    .top_menu li.last {
+        float: none;
     }
 }

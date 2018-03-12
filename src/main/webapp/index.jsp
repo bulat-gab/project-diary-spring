@@ -18,7 +18,7 @@
   <body>
   <%@include file="header.jsp"%>
     <br>
-   <<br>
+    <br>
   <div class="container">
       <div class="login">
           <form method="post" action="login" name="Login">
@@ -32,7 +32,7 @@
                   <input type="password" placeholder="Enter Password" name="password" value="123" id="loginPassword"required>
               </p>
               <p>
-                  <input type="submit" value="Login" name="login" class="button"/>
+                  <input type="submit" value="Login" name="login" class="button button-login"/>
               </p>
           </form>
       </div>
@@ -49,7 +49,7 @@
                   <input type="password" placeholder="Enter Password" name="password" id="regPassword" required>
               </p>
               <p>
-                  <input type="submit" value="Register" name="registration"  class="button"/>
+                  <input type="submit" value="Register" name="registration"  class="button button-registration"/>
               </p>
           </form>
       </div>

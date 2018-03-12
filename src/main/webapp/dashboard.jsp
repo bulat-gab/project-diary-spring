@@ -20,10 +20,7 @@
 <body>
 <%@include file="header.jsp"%>
     <header>
-        <h1>Welcome, ${sessionScope.username}</h1>
-        <form method="get" action="logout">
-            <input type="submit" name="Logout" value="Logout">
-        </form>
+        <h1>Greetings, ${sessionScope.username}</h1>
     </header>
 
     <div class="dashboard">
@@ -38,19 +35,22 @@
         </ul>
     </div>
 
-    <form method="post" action="add-diary" id="add-diary">
-        <input type="text" placeholder="Diary name" name="name" required>
-        <input type="submit" name="add-diary" value="Add diary">
-    </form>
-    <textarea rows="4" cols="50" name="note"
-              form="add-diary" placeholder="Enter your diary here" required></textarea>
+    <div class="add_diary">
+        <form method="post" action="add-diary" id="add-diary">
+            <input type="text" placeholder="Enter a diary name" name="name" required>
+            <input type="submit" name="add-diary" value="Add diary" class="button button-add-diary">
+            <textarea rows="4" cols="50" name="note" form="add-diary" placeholder="Enter your diary here" required></textarea>
+        </form>
+         </div>
 
     <br>
-    <form method="post" action="delete-diary">
-        <label></label>
-        <input type="text" name="diaryToDelete" required>
-        <input type="submit" value="Delete diary" name="delete">
-    </form>
 
+    <div class="delete_diary">
+        <form method="post" action="delete-diary">
+            <label></label>
+            <input type="text" name="diaryToDelete" placeholder="Enter a diary name to delete" required>
+            <input type="submit" value="Delete diary" name="delete" class="button button-delete-diary">
+        </form>
+    </div>
 </body>
 </html>
