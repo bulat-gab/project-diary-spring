@@ -6,25 +6,105 @@ html, body {
     -webkit-font-smoothing: antialiased;    background: #f0f0f0;
 }
 
-.header_info {
-    font-weight: bold;
-    color: #ff2207;
-    text-shadow: 2px 2px #ff041c;
+header {
     text-align: center;
 }
 
+.header_info {
+    font-weight: bold;
+    color: #555555;
+    text-shadow: 2px 2px #4CAF50;
+    text-align: center;
+    font-size: 4em;
+}
+
+.top_menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.top_menu li {
+    /*display: inline-block;
+    padding: 10px 30px;
+    margin: 0;*/
+
+    display: inline-block;
+}
+
+.top_menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top_menu li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    height: 500px;
+    max-width: 1000px;
+    position: relative;
+}
+
+.login_button:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
 .login {
-    float: left;
+    width: 40%;
     display: inline-block;
-    max-width: 500px;
+    background-color: #f4fcff;
+    margin-right: 10%;
 }
 
-.logout {
-    max-width: 500px;
+.registration{
+    width: 40%;
     display: inline-block;
+    background-color: #f4fcff;
 }
 
-.register {
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover{
+    opacity: 0.7;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
-    max-width: 500px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .login,
+    .registration {
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+    }
 }

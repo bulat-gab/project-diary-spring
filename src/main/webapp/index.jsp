@@ -9,57 +9,59 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Diary</title>
-    <link href="<c:url value='/resources/css/index.css' />" type="text/css" rel="stylesheet">
-     </head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <%--<META HTTP-EQUIV="refresh" CONTENT="1">--%>
+      <title>Diary Service</title>
+  </head>
   <body>
-  <header>
-    <div class="header">
-      <h1 class="header_info">Welcome to the Diary service!
-      </h1>
-    </div>
-  </header>
+  <%@include file="header.jsp"%>
+    <br>
+   <<br>
+  <div class="container">
+      <div class="login">
+          <form method="post" action="login" name="Login">
+              <h2>Log in</h2>
+              <p>
+                  <label for="loginUsername"><strong>Username</strong></label>
+                  <input type="text" placeholder="Enter username" name="username" value="gab" id="loginUsername"required>
+              </p>
+              <p>
+                  <label for="loginPassword"><strong>Password</strong></label>
+                  <input type="password" placeholder="Enter Password" name="password" value="123" id="loginPassword"required>
+              </p>
+              <p>
+                  <input type="submit" value="Login" name="login" class="button"/>
+              </p>
+          </form>
+      </div>
 
-  <div class="login">
-    <form method="post" action="login" name="Login">
-      <h2>Log in</h2>
-      <p>
-          <label for="loginUsername">Username</label>
-          <input type="text" placeholder="Enter username" name="username" value="gab" id="loginUsername"required>
-      </p>
-      <p>
-          <label for="loginPassword">Password</label>
-          <input type="password" placeholder="Enter Password" name="password" value="123" id="loginPassword"required>
-      </p>
-      <p class="login button">
-          <input type="submit" value="Login" name="login"/>
-      </p>
-    </form>
+      <div class="registration">
+          <form method="post" action="registration" name="Registration">
+              <h2>Registration</h2>
+              <p>
+                  <label for="regUsername"><strong>Username</strong></label>
+                  <input type="text" placeholder="Enter username" name="username" id="regUsername" required>
+              </p>
+              <p>
+                  <label for="regPassword"><strong>Password</strong></label>
+                  <input type="password" placeholder="Enter Password" name="password" id="regPassword" required>
+              </p>
+              <p>
+                  <input type="submit" value="Register" name="registration"  class="button"/>
+              </p>
+          </form>
+      </div>
   </div>
 
-  <div class="logout">
+
+  <%--<div class="logout">
       <form method="get" action="logout" name="Logout">
           <h2>Logout</h2>
           <input type="submit" value="Logout" name="login" id="logout"/>
       </form>
-  </div>
-
-  <div class="register">
-      <form method="post" action="registration" name="Registration">
-          <h2>Registration</h2>
-          <p>
-              <label for="regUsername">Username</label>
-              <input type="text" placeholder="Enter username" name="username" id="regUsername" required>
-          </p>
-          <p>
-              <label for="regPassword">Password</label>
-              <input type="password" placeholder="Enter Password" name="password" id="regPassword" required>
-          </p>
-          <p>
-              <input type="submit" value="registration" name="registration" id="registration"/>
-          </p>
-      </form>
-  </div>
+  </div>--%>
 
   </body>
 </html>

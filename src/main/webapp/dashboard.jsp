@@ -18,12 +18,14 @@
     <title>Dashboard</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
     <header>
         <h1>Welcome, ${sessionScope.username}</h1>
         <form method="get" action="logout">
             <input type="submit" name="Logout" value="Logout">
         </form>
     </header>
+
     <div class="dashboard">
         <h3>Here is your diary list: </h3>
         <ul>
