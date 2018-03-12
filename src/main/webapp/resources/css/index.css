@@ -1,6 +1,30 @@
-.kek {
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+    -webkit-font-smoothing: antialiased;    background: #f0f0f0;
+}
+
+.header_info {
     font-weight: bold;
     color: #ff2207;
     text-shadow: 2px 2px #ff041c;
     text-align: center;
+}
+
+.login {
+    float: left;
+    display: inline-block;
+    max-width: 500px;
+}
+
+.logout {
+    max-width: 500px;
+    display: inline-block;
+}
+
+.register {
+    display: inline-block;
+    max-width: 500px;
 }

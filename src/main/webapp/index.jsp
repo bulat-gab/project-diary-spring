@@ -15,40 +15,51 @@
   <body>
   <header>
     <div class="header">
-      <h1 class="kek">Welcome to the Diary service!
+      <h1 class="header_info">Welcome to the Diary service!
       </h1>
     </div>
   </header>
-  <form method="post" action="login" name="Login">
-    <h2>Login</h2>
-    <label for="loginUsername"><b>Username</b></label>
-    <input type="text" placeholder="Enter username" name="username" value="gab" id="loginUsername"required>
-    <br>
-    <label for="loginPassword"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" value="123" id="loginPassword"required>
-    <br>
-    <label for="login">Login</label>
-    <input type="submit" value="login" name="login" id="login"/>
-  </form>
-  <br>
 
-  <form method="get" action="logout" name="Logout">
-    <h2>Logout</h2>
-    <label for="login">Logout</label>
-    <input type="submit" value="logout" name="login" id="logout"/>
-  </form>
-  <br>
+  <div class="login">
+    <form method="post" action="login" name="Login">
+      <h2>Log in</h2>
+      <p>
+          <label for="loginUsername">Username</label>
+          <input type="text" placeholder="Enter username" name="username" value="gab" id="loginUsername"required>
+      </p>
+      <p>
+          <label for="loginPassword">Password</label>
+          <input type="password" placeholder="Enter Password" name="password" value="123" id="loginPassword"required>
+      </p>
+      <p class="login button">
+          <input type="submit" value="Login" name="login"/>
+      </p>
+    </form>
+  </div>
 
-  <form method="post" action="registration" name="Registration">
-    <h2>Registration</h2>
-    <label for="regUsername"><b>Username</b></label>
-    <input type="text" placeholder="Enter username" name="username" id="regUsername" required>
-    <br>
-    <label for="regPassword"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="regPassword" required>
-    <br>
-    <label for="registration">Register</label>
-    <input type="submit" value="registration" name="registration" id="registration"/>
-  </form>
+  <div class="logout">
+      <form method="get" action="logout" name="Logout">
+          <h2>Logout</h2>
+          <input type="submit" value="Logout" name="login" id="logout"/>
+      </form>
+  </div>
+
+  <div class="register">
+      <form method="post" action="registration" name="Registration">
+          <h2>Registration</h2>
+          <p>
+              <label for="regUsername">Username</label>
+              <input type="text" placeholder="Enter username" name="username" id="regUsername" required>
+          </p>
+          <p>
+              <label for="regPassword">Password</label>
+              <input type="password" placeholder="Enter Password" name="password" id="regPassword" required>
+          </p>
+          <p>
+              <input type="submit" value="registration" name="registration" id="registration"/>
+          </p>
+      </form>
+  </div>
+
   </body>
 </html>
