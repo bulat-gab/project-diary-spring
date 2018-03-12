@@ -8,47 +8,57 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%--<%
-    String username = (String) session.getAttribute("username");
-    DiaryService diaryService = new DiaryServiceImpl() ;
-    List<Diary> diaries = diaryService.getAllDiariesByUserName(username);
-%>--%>
 <html>
 <head>
     <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<%@include file="header.jsp"%>
     <header>
-        <h1>Welcome, ${sessionScope.username}</h1>
-        <form method="get" action="logout">
-            <input type="submit" name="Logout" value="Logout">
-        </form>
+        <h1>Greetings, ${sessionScope.username}</h1>
     </header>
-    <div class="dashboard">
-        <h3>Here is your diary list: </h3>
-        <ul>
-        <c:forEach items="${requestScope.diaries}" var="diary">
-            <li>
-                    <strong>${diary.getName()}</strong> <br>
-                    ${diary.getNote()}
-            </li>
-        </c:forEach>
-        </ul>
+    <div class="content-wrapper">
+        <div class="content dashboard">
+            <h3>Here is your diary list: </h3>
+            <ol>
+                <c:forEach items="${requestScope.diaries}" var="diary">
+                    <li>
+                        <strong>${diary.getName()}</strong> <br>
+                            ${diary.getNote()}
+                    </li>
+                </c:forEach>
+            </ol>
+        </div>
+
+        <div class="content add_diary">
+            <form method="post" action="add-diary" id="add-diary">
+                <p>
+                    <input type="text" placeholder="Enter a diary name" name="name" required>
+                </p>
+                <p>
+                    <textarea rows="4" cols="50" name="note" form="add-diary" placeholder="Enter your diary here" required></textarea>
+                </p>
+                <p>
+                    <input type="submit" name="add-diary" value="Add diary" class="button button-add-diary">
+                </p>
+
+            </form>
+        </div>
+
+        <br>
+
+        <div class="content delete_diary">
+            <form method="post" action="delete-diary">
+                <p>
+                    <input type="text" name="diaryToDelete" placeholder="Enter a diary name to delete" required>
+                </p>
+                <p>
+                    <input type="submit" value="Delete diary" name="delete" class="button button-delete-diary">
+                </p>
+            </form>
+        </div>
     </div>
-
-    <form method="post" action="add-diary" id="add-diary">
-        <input type="text" placeholder="Diary name" name="name" required>
-        <input type="submit" name="add-diary" value="Add diary">
-    </form>
-    <textarea rows="4" cols="50" name="note"
-              form="add-diary" placeholder="Enter your diary here" required></textarea>
-
-    <br>
-    <form method="post" action="delete-diary">
-        <label></label>
-        <input type="text" name="diaryToDelete" required>
-        <input type="submit" value="Delete diary" name="delete">
-    </form>
 
 </body>
 </html>
