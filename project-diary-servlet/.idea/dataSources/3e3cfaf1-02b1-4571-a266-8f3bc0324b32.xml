@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - project-diary@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="project-diary">
+      <ObjectId>16387</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12443</ObjectId>
+    </database>
+    <role id="4" parent="1" name="gab_postgres">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <role id="7" parent="1" name="project-diary">
+      <ObjectId>16385</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="8" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-06.22:06:39.255</IntrospectionTimestamp>
+      <IntrospectionStateNumber>631</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="9" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="information_schema">
+      <ObjectId>12155</ObjectId>
+    </schema>
+    <sequence id="14" parent="8" name="diaries_d_id_seq">
+      <ObjectId>16463</ObjectId>
+      <StateNumber>630</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="15" parent="8" name="diaries">
+      <ObjectId>16439</ObjectId>
+      <StateNumber>628</StateNumber>
+    </table>
+    <table id="16" parent="8" name="keeps">
+      <ObjectId>16447</ObjectId>
+      <StateNumber>618</StateNumber>
+    </table>
+    <table id="17" parent="8" name="users">
+      <ObjectId>16397</ObjectId>
+      <StateNumber>623</StateNumber>
+    </table>
+    <column id="18" parent="15" name="d_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631</StateNumber>
+      <DefaultExpression>nextval(&apos;diaries_d_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>diaries_d_id_seq</SequenceName>
+    </column>
+    <column id="19" parent="15" name="note">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>617</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="20" parent="15" name="name">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>628</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="21" parent="15" name="diaries_pkey">
+      <ObjectId>16445</ObjectId>
+      <ColNames>d_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="22" parent="15" name="diaries_pkey">
+      <ObjectId>16446</ObjectId>
+      <ColNames>d_id</ColNames>
+      <UnderlyingIndexName>diaries_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="16" name="d_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="24" parent="16" name="username">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="25" parent="16" name="keeps_d_id_username_pk">
+      <ObjectId>16450</ObjectId>
+      <ColNames>d_id
+username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="26" parent="16" name="keeps_d_id_uindex">
+      <ObjectId>16462</ObjectId>
+      <ColNames>d_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="16" name="keeps_d_id_username_pk">
+      <ObjectId>16451</ObjectId>
+      <ColNames>d_id
+username</ColNames>
+      <UnderlyingIndexName>keeps_d_id_username_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="16" name="keeps_diaries__fk">
+      <ObjectId>16452</ObjectId>
+      <ColNames>d_id</ColNames>
+      <RefTableId>16439</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>diaries</RefTableName>
+      <RefKeyName>diaries_pkey</RefKeyName>
+      <RefColNames>d_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="16" name="keeps_users_username_fk">
+      <ObjectId>16457</ObjectId>
+      <ColNames>username</ColNames>
+      <RefTableId>16397</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="30" parent="17" name="username">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>600</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="31" parent="17" name="password">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>624</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="32" parent="17" name="users_pkey">
+      <ObjectId>16402</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="17" name="users_username_key">
+      <ObjectId>16400</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="17" name="users_pkey">
+      <ObjectId>16403</ObjectId>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="35" parent="17" name="users_username_key">
+      <ObjectId>16401</ObjectId>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>users_username_key</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
